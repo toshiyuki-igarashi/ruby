@@ -32,8 +32,7 @@ def compile_extension(name)
   ruby_header = "#{RbConfig::CONFIG['rubyhdrdir']}/ruby.h"
 
   if RbConfig::CONFIG["ENABLE_SHARED"] == "yes"
-    libdirname = RbConfig::CONFIG['LIBPATHENV'] == 'PATH' ? 'bindir' :
-                   RbConfig::CONFIG['libdirname'] # defined since 2.1
+    libdirname = RbConfig::CONFIG['libdirname'] # defined since 2.1
     libruby_so = "#{RbConfig::CONFIG[libdirname]}/#{RbConfig::CONFIG['LIBRUBY_SO']}"
   end
 
