@@ -35,7 +35,12 @@ def compile_extension(name)
     libdirname = RbConfig::CONFIG['libdirname'] # defined since 2.1
     libruby_so = "#{RbConfig::CONFIG[libdirname]}/#{RbConfig::CONFIG['LIBRUBY_SO']}"
   end
-
+puts
+puts "---- compile_extension"
+puts "libdirname: #{libdirname}, RbConfig::CONFIG['libdirname']: #{RbConfig::CONFIG['libdirname']}"
+puts "libruby_so: #{libruby_so}, RbConfig::CONFIG['LIBRUBY_SO']: #{RbConfig::CONFIG['LIBRUBY_SO']}"
+puts "----"
+puts
   begin
     mtime = File.mtime(lib)
   rescue Errno::ENOENT

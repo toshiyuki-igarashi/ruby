@@ -51,6 +51,12 @@ prehook = proc do |extmk|
   RbConfig.fire_update!("rubyhdrdir", "$(top_srcdir)/include")
   RbConfig.fire_update!("rubyarchhdrdir", "$(extout)/include/$(arch)")
   RbConfig.fire_update!("libdirname", "buildlibdir")
+puts
+puts "---- fake.rb"
+puts "RbConfig::CONFIG['libdirname']: #{RbConfig::CONFIG['libdirname']}"
+puts "RbConfig::CONFIG['LIBRUBY_SO']: #{RbConfig::CONFIG['LIBRUBY_SO']}"
+puts "----"
+puts
   trace_var(:$ruby, posthook)
   untrace_var(:$extmk, prehook)
 end
